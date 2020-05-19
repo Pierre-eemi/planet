@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial;
+} 
+
+/* Style du header */
+#header {
+    background-color: #331038;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 1px 2px 0px #404040;
+    z-index: 1;
+}
+
+#header figure {
+    margin: 0;
+}
+
+h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 5px;
+    font-family: 'Dosis';
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+}
+
+button {
+    background-color: #ffffff;
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px 0px #404040;
+}
+
+/*filtre */
+#filters {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 1px 3px -1px #404040;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+#filters p {
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404040;
+    line-height: 1;
+}
+
+#filters figure {
+    margin: 0;
+    height: 25px;
+}
+
+#filters img {
+    max-height: 100%;
+}
+
+#main-container {
+    position: relative;
+    top: 100px;
+}
+
+/* Count */
+#count {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    font-size: 0.9rem;
+    font-family: Arial;
+}
+
+#count > h3 {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    color:#404040;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* resultats */
+#results {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 4% auto 0 auto;
+}
+
+.article {
+    height: 250px;
+    box-shadow: 0px 3px 4px 0px #827672;
+    margin-bottom: 5%;
+}
+
+.preview-planet {
+    margin: 0;
+    height: 40%;
+}
+
+.preview-planet > img {
+    width: 100%;
+    max-height: 250px;
+}
+
+.sphere {
+    margin: 0;
+}
+
+.sphere > img {
+    width: 50px;
+}
+
+.info {
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60%;
+    width: 100%;
+}
+
+.info > div:nth-of-type(1) {
+    display: flex;
+    padding-top: 2%;
+    margin-bottom: 2%;
+}
+
+.info > div:nth-of-type(1), .info > div:nth-of-type(2) {
+    padding-left: 2%;
+}
+
+.info > div:nth-of-type(1) > :nth-child(2) {
+    margin-left: 2%;
+}
+
+.info h4, .info p {
+    margin: 0;
+}
+
+#nav{
+    display: none;
+}
+
+#filtres{
+        display: none;
+    }
+
+@media screen and (min-width:600px){
+    
+    #main-container{
+        position: relative;
+        top: 60px;
+        display: grid;
+        grid-template-areas:'resultat resultat' 
+                            'sidebar list';
+        grid-template-columns: 25% auto;
+        grid-template-rows: auto 1fr;
+    }
+    
+    /* Count */
+    #count{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-area: resultat;
+        width: 100%;
+        height: 10vh;
+        background-color:#e1bee7;
+        border-bottom: solid 1px #858585;
+    } 
+
+    #count > h3{
+        margin-left: 20px;
+    }
+
+    #count > a{
+        margin-left: 20px;
+    }
+    
+    #results{
+        grid-area: list;
+        
+    } 
+    #filtres{
+        grid-area: sidebar;
+        margin: 4% auto 0 auto;
+        display: block;
+        color: lightgrey;
+    }
+    #filtres  p {
+        font-size: 0.9rem;
+        font-style: italic;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        color: lightgrey;
+        line-height: 1;
+        }
+    
+    #filters{
+        display: none;
+    }
+    .article{
+        height: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;        
+        
+    }
+
+    .article > figure{
+        margin: 0;
+        width: 25%;
+        height: 100px;
+
+    }
+    .article > figure > img{
+        width: 100%;
+        height: 100%;
+    }
+    .info{
+        display: flex;
+        flex-direction: row;
+        font-size: 0.6rem;    
+    }
+
+    .info > div{
+        width: 100%;
+    }
+
+    .info > div {
+        border-right: 1px solid lightgrey;
+    }
+
+    .info2{
+        margin-top: 5px;
+    }
+
+    
+
+
+
+}
+@media screen and (min-width:720px){
+
+    /*header*/
+
+    #header{
+        background-color: #fff;
+    }
+
+    h1{
+        color: black;
+    }
+
+    #nav{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+
+    #nav > img {
+        margin-top: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    h3{
+        margin-left: 100px;
+    }
+
+    #count > a{
+        margin-left: 40px;
+    }
+
+    .need{
+        margin-left: 90px;
+        font-size: 0.7rem;
+    }
+
+    .hello{
+        margin-left: 40px;
+        font-size: 0.7rem;
+    }
+
+    #nav > img{
+        margin-left: 10px;
+    }
+
+    #nav > a {
+        padding-top: 15px;
+    }
+
+    #nav > input {
+        width: 450px;    
+        margin-top: 10px;
+        border: 0;
+        border-bottom: 1px solid #331038;
+    }
+
+    #filtres{
+        margin-left: 30px;
+    }
+
+    .top{
+        margin-top: 15px;
+    }
+
+    
+
+    
+    
+    
+
+
+}
